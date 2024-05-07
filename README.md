@@ -1,5 +1,6 @@
 # Project-Organizar 
 This is a generalized version of a VBA code that I am working on to help Sort, Organize, and Prioritize my projects and the tasks associated with them on a daily basis at work.The corresponsing excel workbook contains 3 types of worksheets: 
+
 Sheet1: Insert/search 
   This sheet is where the user can input new projects, update existing projects, and search for existing projects. 
   I am currently working on a way automate the insertion of new tasks and updates from co-workers (which typically come in the form of email) 
