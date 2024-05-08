@@ -18,6 +18,7 @@ Dim C As Long
 Dim D As Long 
 Dim E As Long 
 Dim F As Long 
+Dim G As Long 
 
 'MsgBox Variables 
 Dim response As VbMsgBoxResult 
@@ -29,8 +30,9 @@ B = 2 ' job number 2, will not be over written once entered
 C = 3 ' job number 3, will not be over written once entered 
 'Column 4 would be the title/name of the job, in theory
 D = 5 ' job status, will only be over written when the user updates the job from the job insert sheet
-E = 6 'Notes and/or a summary of the job, will not be overwritten but will be added on to when the user updates the job from the job insert sheet
-F = 7 'Flag, is this job flagged as important or not?, will only be over written when the user updates the job from the insert sheet
+E = 6 'Flag, is this job flagged as important or not?, will only be over written when the user updates the job from the insert sheet
+F = 7 'Notes and/or a summary of the job, will not be overwritten but will be added on to when the user updates the job from the job insert sheet
+G = 8 
 
 'Set the job Insert/search and To do sheet
 Set Inser = ThisWorkbook.Sheets("Job Insert")
@@ -122,6 +124,39 @@ Question:
           If response = cbYes Then 
             'Set column counter 
             h = 2 'h will be the current column 
+            While h < D ' This while loop will run from Column 2 until the last column holding information which is NOT to be overwritten 
+
+             'First we want to update the columns that should NEVER be overwritten when the user updates the job from the job insert sheet (Ex. Jobs #'S, Title) 
+             'Start by checking if this cell is filled in the to do sheet. If it does NOT hold information then we will copy paste the info from the job insert sheet
+             If TD.Cells(j,h).Value = "" Then 
+              Set InserRange = Inser.Cells(i,h)
+              SetTDRange = TD.Cells(j,h)
+              InserRange.Copy TDRange
+              End If
+             h = h + 1 'increase the count to move to next column 
+            Wend 
+
+          'Now we want to updated the columns that should be overwritten when the user updates the job from the job insert sheet (Ex. status, Flag)
+          While h < F
+           'Start by checking if this cell is filled in the job insert sheet. If it does hold information then the user is trying to make a change and we need to copy paste
+           If Inser.Cells(i,h).Value <> "" Then 
+           End If 
+
+          h = h + 1 'increase the count to move to next column 
+          Wend
+
+
+          'Finally, we want to update the columns that should not be overwritten but need to be added on to (Ex. the notes)  
+          While 
+          'Start by checking if this cell is filled in the job insert sheet. If it does hold information then the user is trying to add addition information and we want to 
+          'put those additions into the to do sheet without losing previous information
+           If Inser.Cells(i,h).Value <> "" Then 
+           End If 
+
+          h = h + 1 'increase the count to move to next column 
+          Wend 
+          
+           End If 
          
 Continue: 
 
