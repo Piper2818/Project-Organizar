@@ -6,7 +6,7 @@ Dim Inser As WorkSheet
 Dim TD As WorkSheet 
 Dim Dest As Worksheet 
 
-'These variables will be row counters 
+'These variables will be row/column counters 
 Dim i As Long 
 Dim j As Long 
 Dim h As Long 
@@ -16,12 +16,20 @@ Dim A As Long
 Dim B As Long 
 Dim C As Long 
 Dim D As Long 
+Dim E As Long 
+Dim F As Long 
+
+'MsgBox Variables 
+Dim response As VbMsgBoxResult 
 
 'Set the column variables, these are just examples but they can be changed based on the needs of the user 
-A = 1 ' job number 1 
-B = 2 ' job number 2 
-C = 3 ' job number 3 
-D = 4 ' job status 
+A = 1 ' job number 1, will not be over written once entered 
+B = 2 ' job number 2, will not be over written once entered 
+C = 3 ' job number 3, will not be over written once entered 
+'Column 4 would be the title/name of the job, in theory
+D = 5 ' job status, will only be over written when the user updates the job from the job insert sheet
+E = 6 'Notes and/or a summary of the job, will not be overwritten but will be added on to when the user updates the job from the job insert sheet
+F = 7 'Flag, is this job flagged as important or not?, will only be over written when the user updates the job from the insert sheet
 
 'Set the job Insert/search and To do sheet
 Set Inser = ThisWorkbook.Sheets("Job Insert")
@@ -55,7 +63,7 @@ While Inser.Cells(i,1).Value <> ""
         'Set the job type sheet 
         Set Dest = ThisWorkbook.Sheets("Job Type 1")
         'Set the row counter 
-        j = 2
+        j = 2 'j will be the current row in the to do sheet 
         'While loop to search the to do sheet for a match
         While TD.Cells(j,1).Value <> "" 
             If Inser.Cells(i, A).Value <> "" And Inser.Cells(i,A).Value = TD.Cells(j,A).Value Then 
@@ -74,7 +82,7 @@ While Inser.Cells(i,1).Value <> ""
         'Set the job type sheet 
         Set Dest = ThisWorkbook.Sheets("Job Type 2")
         'Set the row counter 
-        j = 2
+        j = 2 'j will be the current row in the to do sheet 
         'While loop to search the to do sheet for a match
         While TD.Cells(j,1).Value <> "" 
             If Inser.Cells(i, A).Value <> "" And Inser.Cells(i,A).Value = TD.Cells(j,A).Value Then 
@@ -93,7 +101,7 @@ While Inser.Cells(i,1).Value <> ""
         'Set the job type sheet 
         Set Dest = ThisWorkbook.Sheets("Job Type 3")
         'Set the row counter 
-        j = 2
+        j = 2 'j will be the current row in the to do sheet 
         'While loop to search the to do sheet for a match
         While TD.Cells(j,1).Value <> "" 
             If Inser.Cells(i, A).Value <> "" And Inser.Cells(i,A).Value = TD.Cells(j,A).Value Then 
@@ -108,7 +116,13 @@ While Inser.Cells(i,1).Value <> ""
       Wend
       GoTo Continue
     End Select 
-
+Question: 
+          response = MsgBox("This Job Already exsists. Do you want to update it?", vbYesNo + vbQuestion, "Confirmation")
+          If response = cbYes Then 
+            'Set column counter 
+            h = 2 'h will be the current column 
+         
+Continue: 
 
 
 End Sub
