@@ -22,8 +22,8 @@ Dim F As Long
 'MsgBox Variables 
 Dim response As VbMsgBoxResult 
 
-'Set the column variables, this code is currently set up to accommodate excel sheets where the information is organized as follow
-'However, I am currently working on a set up code which will allow the user to further personalize the set up of their excel sheet
+'Set the column variables, this code is currently set up to accommodate excel sheets where the information is organized as follows
+'However, I am currently working on a set up code which will allow the user to further personalize their excel sheets depending on use. 
 A = 1 ' job number 1, will not be over written once entered 
 B = 2 ' job number 2, will not be over written once entered 
 C = 3 ' job number 3, will not be over written once entered 
