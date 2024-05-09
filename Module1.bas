@@ -136,22 +136,30 @@ Question:
              h = h + 1 'increase the count to move to next column 
             Wend 
 
+          h = D
           'Now we want to updated the columns that should be overwritten when the user updates the job from the job insert sheet (Ex. status, Flag)
           While h < F
            'Start by checking if this cell is filled in the job insert sheet. If it does hold information then the user is trying to make a change and we need to copy paste
            If Inser.Cells(i,h).Value <> "" Then 
+            Set InserRange = Inser.Cells(i,h)
+            Set TDRange = Inser.Cells(j,h)
+            InserRange.Copy TDRange
            End If 
 
           h = h + 1 'increase the count to move to next column 
           Wend
 
-
+          h = F
           'Finally, we want to update the columns that should not be overwritten but need to be added on to (Ex. the notes)  
-          While 
-          'Start by checking if this cell is filled in the job insert sheet. If it does hold information then the user is trying to add addition information and we want to 
-          'put those additions into the to do sheet without losing previous information
-           If Inser.Cells(i,h).Value <> "" Then 
-           End If 
+          While h < G 
+           'Start by checking if this cell is filled in the job insert sheet. If it does hold information then the user is trying to add addition information and we want to 
+           'put those additions into the to do sheet without losing previous information
+            If Inser.Cells(i,h).Value <> "" Then 
+             string1 = TD.Cells(j,h).Value 
+             string2 = Inser.Cells(i,h).Value
+             string1 = string1 & vbNewLine & string2 
+             TD.Cells(j,h).Value = string1 
+            End If 
 
           h = h + 1 'increase the count to move to next column 
           Wend 
