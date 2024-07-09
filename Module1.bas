@@ -25,14 +25,14 @@ Dim response As VbMsgBoxResult
 
 'Set the column variables, this code is currently set up to accommodate excel sheets where the information is organized as follows
 'However, I am currently working on a set up code which will allow the user to further personalize their excel sheets depending on use. 
-A = 1 ' job number 1, will not be over written once entered 
+A = 1 ' Date inserted, will not be over written once entered 
 B = 2 ' job number 2, will not be over written once entered 
 C = 3 ' job number 3, will not be over written once entered 
 'Column 4 would be the title/name of the job, in theory
 D = 5 ' job status, will only be over written when the user updates the job from the job insert sheet
 E = 6 'Flag, is this job flagged as important or not?, will only be over written when the user updates the job from the insert sheet
 F = 7 'Notes and/or a summary of the job, will not be overwritten but will be added on to when the user updates the job from the job insert sheet
-G = 8 
+G = 8 'Date last updated 
 
 'Set the job Insert/search and To do sheet
 Set Inser = ThisWorkbook.Sheets("Job Insert")
