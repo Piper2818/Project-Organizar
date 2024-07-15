@@ -16,3 +16,6 @@ This excel document/VBA code is just a proof of concept for a larger project whi
 
 Tech issues relating to Excel: 
 
+1) Ideally, multiple people will need to be working off of and makeing frequent changes to these lists throughout the day and likely at the same time which could cause excel to run poorly and/or crash do to the number of macros in use and the shear amount of data that will need to be held in this sheet.
+
+2) Most of our information (new jobs, job updates, etc.) come in through email and there is no standard way of sending most of this information so this excel sheet will still require a lot of manual maintenance to keep it up to date. Once this is built into a system ideally we can start getting those updates throught the system rather than relying on email. 
