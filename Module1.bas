@@ -167,6 +167,7 @@ Question:
            End If 
          
 Continue: 
+'Jobs should not be entered without the user choosing a current status for the job
 
 
 End Sub
