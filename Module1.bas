@@ -170,5 +170,11 @@ Question:
 Continue: 
 'Jobs should not be entered without the user choosing a current status for the job
 
+ElseIf Inser.Cells(i,D) = "Closed" Then 
+'If the job status is closed when the job is being entered then it does not need to be entered into the to do sheet, it only needs to go into the respective job 
+'sheet to keep record of it. 
+
+
+
 
 End Sub
