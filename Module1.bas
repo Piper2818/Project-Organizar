@@ -32,7 +32,8 @@ C = 3 ' job number 3, will not be over written once entered
 D = 5 ' job status, will only be over written when the user updates the job from the job insert sheet
 E = 6 'Flag, is this job flagged as important or not?, will only be over written when the user updates the job from the insert sheet
 F = 7 'Notes and/or a summary of the job, will not be overwritten but will be added on to when the user updates the job from the job insert sheet
-G = 8 'Date last updated 
+G = 8 'Date last updated, will but automatically updated (see module 4 code) 
+H = 9 'Status log, will be automatically updated (see module 4 code) 
 
 'Set the job Insert/search and To do sheet
 Set Inser = ThisWorkbook.Sheets("Job Insert")
