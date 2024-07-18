@@ -164,8 +164,10 @@ Question:
 
           h = h + 1 'increase the count to move to next column 
           Wend 
-          
-           End If 
+              GoTo skipDuplicate
+         Else 
+              GoTo skipDuplicate
+         End If 
          
 Continue: 
 'Jobs should not be entered without the user choosing a current status for the job
