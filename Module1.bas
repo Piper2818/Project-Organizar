@@ -101,7 +101,7 @@ While Inser.Cells(i,1).Value <> ""
       Wend
       GoTo Continue
 
-      Case "Job Type 3' 
+      Case "Job Type 3"
         'Set the job type sheet 
         Set Dest = ThisWorkbook.Sheets("Job Type 3")
         'Set the row counter 
