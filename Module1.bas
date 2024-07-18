@@ -53,7 +53,7 @@ While Inser.Cells(i,1).Value <> ""
 
   'If the user is trying to enter or update a job without provideing the system with at least one job number to track it by the user should be presented with an error
   'and the code will jump to the next row
-  If Inser.Cells(i,A).Value = "" And Inser.Cells(i, B) = "" And Inser.Cells(i,C) = "" 
+  If Inser.Cells(i,A).Value = "" And Inser.Cells(i, B) = "" And Inser.Cells(i,C) = "" Then 
   MsgBox "Jobs cannot be inserted or updated without at least one job number to identify them by.", vbInformation 
   GoTo skipDuplicate
   End If 
