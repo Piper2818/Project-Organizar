@@ -65,7 +65,7 @@ While Inser.Cells(i,1).Value <> ""
     Select Case Inser.Cells(i,A).Value
       Case "Job Type 1" 
         'Set the job type sheet 
-        Set Dest = ThisWorkbook.Sheets("Job Type 1")
+        Set Dest = ThisWorkbook.Sheets("Records")
         'Set the row counter 
         j = 2 'j will be the current row in the to do sheet 
         'While loop to search the to do sheet for a match
@@ -84,7 +84,7 @@ While Inser.Cells(i,1).Value <> ""
 
       Case "Job Type 2" 
         'Set the job type sheet 
-        Set Dest = ThisWorkbook.Sheets("Job Type 2")
+        Set Dest = ThisWorkbook.Sheets("Records")
         'Set the row counter 
         j = 2 'j will be the current row in the to do sheet 
         'While loop to search the to do sheet for a match
@@ -103,7 +103,7 @@ While Inser.Cells(i,1).Value <> ""
 
       Case "Job Type 3"
         'Set the job type sheet 
-        Set Dest = ThisWorkbook.Sheets("Job Type 3")
+        Set Dest = ThisWorkbook.Sheets("Records")
         'Set the row counter 
         j = 2 'j will be the current row in the to do sheet 
         'While loop to search the to do sheet for a match
