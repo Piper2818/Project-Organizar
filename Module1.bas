@@ -29,6 +29,7 @@ Dim response As VbMsgBoxResult
 Set Inser = ThisWorkbook.Sheets("Job Insert")
 Set TD = ThisWorkbook.Sheets("To do")
 Set Setup = ThisWorkbook.Sheets("SetUp")
+Set Dest = ThisWorkbook.Sheets("Records")
 
 'Row Counter
  i = 2 'This will track the current row in the job insert sheet
@@ -92,7 +93,7 @@ While Inser.Cells(i, 1).Value <> ""
     'If the job is not closed then we it is either being entered or updated in the to do sheet. So we will start by searching the to do sheet for a matching job number
     'but only in the rows that are the correct job type
     
-        Set Dest = ThisWorkbook.Sheets("Records")
+        
         'Set the row counter
         j = 2 'j will be the current row in the to do sheet
         'While loop to search the to do sheet for a match
