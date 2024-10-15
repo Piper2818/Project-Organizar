@@ -2,9 +2,11 @@
 This is a generalized version of a VBA code that I am working on to help Sort, Organize, and Prioritize my projects and the tasks associated with them on a daily basis at work.The corresponsing excel workbook contains 3 types of worksheets: 
 Sheet1: Instructions 
   This sheet would just contain a text box telling the user how to set up, use, and make updates to their workbook. 
+
 Sheet2: Set Up 
   This Sheet is where the user would want to define what information they are going to hold and they are going to define certian criteria, such as how the information should 
   be handled when updateing a job and if the feild is something idenfiable which can be used to search for the job. 
+  
 Sheet3: Insert/search 
   This sheet is where the user can input new projects, update existing projects, and search for existing projects. 
   I am currently working on a way automate the insertion of new tasks and updates from co-workers (which typically come in the form of email) 
